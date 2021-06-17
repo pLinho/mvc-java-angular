@@ -1,0 +1,3 @@
+br\com\nsinova\curso\persiste\Persistencia.class
+br\com\nsinova\curso\persiste\postgres\PessoaPersiste.class
+br\com\nsinova\curso\persiste\IPessoa.class
