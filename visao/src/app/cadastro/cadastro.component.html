@@ -1,0 +1,23 @@
+<div class="toolbar">
+    <input type="text" [(ngModel)]="pesquisa" (keydown.enter)="obterLista()">
+    <button (click)="obterLista()">Pesquisar</button>
+</div>
+<div class="divider">
+    <div class="painel">
+        <div class="list">
+            <div class="item" *ngFor="let item of pessoas" (click)="selecionado=item"
+                [class.selected]="selecionado===item">
+                {{ item.nomeCompleto }}
+            </div>
+        </div>
+    </div>
+    <div class="itemSelecionado" *ngIf="selecionado">
+        <label for="cadastro_cnpjcpf">CNPJ/CPF:</label>
+        <input id="cadastro_cnpjcpf" type="text" placeholder="CNPJ/CPF">
+        <label for="nome_completo">Nome completo:</label>
+        <input id="nome_completo" type="text" placeholder="Nome Completo" [(ngModel)]="selecionado.nomeCompleto">
+        <label for="data_nascimento">Data Nascimento</label>
+        <input id="data_nascimento" type="date" placeholder="Data Nascimento"
+            [(valueAsDate)]="selecionado.dataNascimento">
+    </div>
+</div>

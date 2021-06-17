@@ -1,0 +1,58 @@
+:host {
+    flex: auto;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    height: 100vh;
+    align-items: stretch;
+    justify-content: stretch;
+}
+.toolbar {
+    //262847
+    background: linear-gradient(45deg, #262847 0%, #362950 100%);
+    padding: 12px;
+
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+}
+.divider {
+    display: flex;
+    flex-direction: row;
+    flex: auto;
+
+    > * {
+        flex: auto;
+    }
+}
+
+.list {
+    flex: auto;
+    display: flex;
+    overflow: auto;
+    flex-direction: column;
+    .item {
+        padding: 12px;
+        &:nth-child(odd) {
+            background-color: rgba(#262847, 0.1);
+        }
+        &.selected {
+            background-color: rgba(#262847, 0.2);
+            &:nth-child(odd) {
+                background-color: rgba(#1c1e38, 0.2);
+            }
+        }
+    }
+}
+.itemSelecionado {
+    display: flex;
+    flex-direction: column;
+
+    padding: 12px;
+
+    input {
+        border-top: unset;
+        border-left: unset;
+        border-right: unset;
+
+        margin-bottom: 12px;
+    }
+}
